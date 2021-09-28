@@ -34,7 +34,7 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent implements OnInit {
 
-  itemCount: number;
+  itemCount: number = 2;
   btnText: string = `Add an Item`;
   goalText: string = `My first life goal`;
   goals = [`My first life goal`,`I want to climb a mountain`, `Go ice skiing`];
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
     this._data.changeGoal(this.goals);
   }
 
-  removeItem(i){
+  removeItem(i: number){
     this.goals.splice(i,1);
     this._data.changeGoal(this.goals);
   }
